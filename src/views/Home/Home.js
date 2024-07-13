@@ -18,14 +18,16 @@ function Home() {
     return (
     <div>
         <h1>All articles about Tesla</h1>
-        {
-            news.map((newsArticle, index)=>{
-                const {author, title, description, url, urlToImage, publishedAt, content} = newsArticle
-                return(
-                    return(<NewsArticle author={author} title={title} description={description} url={url} urlToImage={urlToImage} publishedAt={publishedAt} content={content}/>)                  
-                )
-            })
-        }
+        <div className="news-container">
+            {
+                news.map((newsArticle, index)=>{
+                    const {author, title, description, url, urlToImage, publishedAt, content} = newsArticle
+                
+                        return (<NewsArticle author={author} title={title} description={description} url={url} urlToImage={urlToImage} publishedAt={publishedAt} content={content} key={index}/>)                  
+                
+                })
+            }
+        </div>
     </div>
   )
 }

@@ -1,5 +1,9 @@
 .news-article-img{
+    height: 250px;
     width: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
 }
 .news-article-card{
     margin-bottom: 20px;
