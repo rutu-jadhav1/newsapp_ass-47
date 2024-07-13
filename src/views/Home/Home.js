@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import "./Home.css"
+import NewsArticle from "../../components/NewsArticle/NewsArticle"
 
 function Home() {
     const [news, setNews] = useState([])
@@ -21,13 +22,7 @@ function Home() {
             news.map((newsArticle, index)=>{
                 const {author, title, description, url, urlToImage, publishedAt, content} = newsArticle
                 return(
-                    <>
-                        <div className="news-article-card">
-                            <img src={urlToImage} alt="" className="news-article-img"/>
-                            <h2>{title}</h2>
-                        </div>
-                    </>
-                   
+                    return(<NewsArticle author={author} title={title} description={description} url={url} urlToImage={urlToImage} publishedAt={publishedAt} content={content}/>)                  
                 )
             })
         }
