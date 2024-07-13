@@ -21,9 +21,9 @@ function Home() {
         <div className="news-container">
             {
                 news.map((newsArticle, index)=>{
-                    const {author, title, description, url, urlToImage, publishedAt, content} = newsArticle
+                    const {author, title, description, url, urlToImage, publishedAt} = newsArticle
                 
-                        return (<NewsArticle author={author} title={title} description={description} url={url} urlToImage={urlToImage} publishedAt={publishedAt} content={content} key={index}/>)                  
+                        return (<NewsArticle author={author} title={title} description={description} url={url} urlToImage={urlToImage} publishedAt={publishedAt} key={index}/>)                  
                 
                 })
             }
