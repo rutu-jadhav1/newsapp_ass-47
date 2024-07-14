@@ -5,11 +5,11 @@ import NewsArticle from "../../components/NewsArticle/NewsArticle"
 
 function Home() {
     const [news, setNews] = useState([])
-    const [searchQuery, setSearchQuery] = useState("pune")
+    const [searchQuery, setSearchQuery] = useState("Pune")
 
     const loadNews = async () => {
         try{
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=${searchQuery}&from=2024-06-13&sortBy=publishedAt&apiKey=05160faa47374fd698ffdbc06b43d80a`);
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=${searchQuery}&from=2024-06-13&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}`);
             setNews(response.data.articles)
         }
         catch(error){
